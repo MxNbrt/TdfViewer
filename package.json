@@ -1,0 +1,15 @@
+{
+  "name": "tdf-viewer",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A simple viewer for tdf, tmf, tsf and xml files",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "1.8.2"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "update-deps": "npm update",
+    "postupdate-deps": "bower update"
+  }
+}
