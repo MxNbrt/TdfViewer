@@ -1,25 +1,59 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp" class="no-js">
+<html lang="en" ng-app="myApp">
+
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="app.css">
-</head>
-<body>
-  <div ng-view></div>
+  <title>TDF Viewer</title>
 
-  <div>TDF Viewer</div>
+  <link rel="stylesheet" type="text/css" href="bower_components/devextreme/css/dx.spa.css" />
+  <link rel="stylesheet" type="text/css" href="bower_components/devextreme/css/dx.common.css" />
+  <link rel="stylesheet" type="text/css" href="bower_components/devextreme/css/dx.light.css" />
 
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/devextreme/js/dx.all.js"></script>
+  <script src="bower_components/lodash/dist/lodash.js"></script>
+
+  <link rel="stylesheet" href="app.css">
   <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+</head>
+
+<body ng-controller="myCtrl">
+  <table>
+    <tr>
+      <td width="20%">
+      </td>
+      <td class="twenty">
+        1.
+      </td>
+      <td width="15%">
+        <div dx-file-uploader="fileUploaderOptions" id="fileUploader"></div>
+      </td>
+      <td class="twenty">
+        2.
+      </td>
+      <td width="20%">
+        <div dx-select-box="selectBoxOptions" id="boSelector"></div>
+      </td>
+      <td class="twenty">
+        3.
+      </td>
+      <td width="15%">
+        <div>Editierung in der Grid</div>
+      </td>
+      <td class="twenty">
+        4.
+      </td>
+      <td width="10%">
+        <div dx-button="downloadButtonOptions" id="downloadButton"></div>
+      </td>
+      <td width="20%">
+      </td>
+    </tr>
+  </table>
+  <div id="output">Output</div>
 </body>
+
 </html>
