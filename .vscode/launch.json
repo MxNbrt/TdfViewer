@@ -8,8 +8,8 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "file:///C:/Users/maximilian.neubert/Documents/angularjs/tdfviewer/app/index.html",
-            "webRoot": "${workspaceRoot}"
+            "webRoot": "${workspaceFolder}",
+            "file": "${workspaceFolder}/app/index.html"
         }
     ]
 }

@@ -18,6 +18,7 @@
 
   <link rel="stylesheet" href="app.css">
   <script src="app.js"></script>
+  <script src="fileutils.js"></script>
 </head>
 
 <body ng-controller="myCtrl">
@@ -53,7 +54,9 @@
       </td>
     </tr>
   </table>
-  <div id="output">Output</div>
+  <div id="grid">
+    <div dx-data-grid="dataGridOptions"></div>
+  </div>
 </body>
 
 </html>
