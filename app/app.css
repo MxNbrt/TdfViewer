@@ -1,4 +1,13 @@
 td.twenty {
     width: 20px;
     padding: 20px;
-};
+}
+
+#result {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.dx-data-row{
+    font-family: Consolas;
+}

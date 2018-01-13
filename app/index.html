@@ -12,13 +12,13 @@
 
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/devextreme/js/dx.all.js"></script>
+  <script src="bower_components/devextreme/js/dx.all.debug.js"></script>
   <script src="bower_components/lodash/dist/lodash.js"></script>
 
   <link rel="stylesheet" href="app.css">
   <script src="app.js"></script>
   <script src="fileutils.js"></script>
+  <script src="consts.js"></script>
 </head>
 
 <body ng-controller="myCtrl">
@@ -30,13 +30,13 @@
         1.
       </td>
       <td width="15%">
-        <div dx-file-uploader="fileUploaderOptions" id="fileUploader"></div>
+        <div dx-file-uploader="fileUploaderOptions"></div>
       </td>
       <td class="twenty">
         2.
       </td>
       <td width="20%">
-        <div dx-select-box="selectBoxOptions" id="boSelector"></div>
+        <div dx-select-box="selectBoxOptions"></div>
       </td>
       <td class="twenty">
         3.
@@ -48,13 +48,13 @@
         4.
       </td>
       <td width="10%">
-        <div dx-button="downloadButtonOptions" id="downloadButton"></div>
+        <div dx-button="downloadButtonOptions"></div>
       </td>
       <td width="20%">
       </td>
     </tr>
   </table>
-  <div id="grid">
+  <div id="result">
     <div dx-data-grid="dataGridOptions"></div>
   </div>
 </body>
