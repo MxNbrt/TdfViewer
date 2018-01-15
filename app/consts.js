@@ -66,7 +66,7 @@ function getInitialDataGridOptions(initializedFunction) {
 
 function getExampleTdf() {
     return
-        '<?xml version="1.0" encoding="ISO-8859-1"?>' +
+    '<?xml version="1.0" encoding="ISO-8859-1"?>' +
         '<TDF>' +
 
         '<TRANSFER OBJECTID="BdQueryGroup">' +
