@@ -15,7 +15,26 @@ app.controller('myCtrl', function ($scope) {
     $scope.dataGridOptions = getInitialDataGridOptions(dataGridInitialized);
 
     function selectionChanged(e) {
-        $scope.boGridInstance.option('dataSource', e.selectedItem.datasets);
+        var columns = e.selectedItem.COLUMNS.split(",");
+        var data = e.selectedItem.DATA.DR;
+        
+        var gridData = [];
+        // if data is array, iterate children
+        if (_.isArray(data))
+        {
+            _.forEach(data, function(value) {
+                var datarow = value.match(/\w+|"[^"]+"/g) // _.split(childElement.childNodes[dr].textContent, ',');
+                    
+                gridData.push(_.zipObject(columns, datarow));
+            });
+        }
+        else // if data is string, split string
+        {
+            gridData.push(_.zipObject(columns, data.split(",")));
+        }
+
+        $scope.boGridInstance.option('dataSource', gridData);
+        $scope.boGridInstance.option('columns', columns);
     };
 
     function selectBoxInitialized(e) {
@@ -41,8 +60,9 @@ app.controller('myCtrl', function ($scope) {
     }
 
     function fileUploaded(files) {
-        if (files.value[0] === null)
+        if (files.value[0] === null) {
             return;
+        };
 
         currentFile = files.value[0].name;
 
@@ -57,6 +77,5 @@ app.controller('myCtrl', function ($scope) {
         reader.readAsText(files.value[0]);
     }
 
-    currentFile = "test.tdf";
-    $scope.businessObjects = readFile(currentFile, getExampleTdf);
+    $scope.businessObjects = readFile("test.tdf", exampleTdf);
 });

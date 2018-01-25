@@ -17,7 +17,7 @@ function getInitialSelectBoxOptions(selectionChangedFunction, initializedFunctio
         bindingOptions: {
             dataSource: 'businessObjects'
         },
-        displayExpr: 'objectId',
+        displayExpr: '_OBJECTID',
         disabled: true,
         placeholder: 'BusinessObjekt auswählen',
         onSelectionChanged: selectionChangedFunction,
@@ -64,37 +64,35 @@ function getInitialDataGridOptions(initializedFunction) {
     };
 };
 
-function getExampleTdf() {
-    return
+var exampleTdf =
     '<?xml version="1.0" encoding="ISO-8859-1"?>' +
-        '<TDF>' +
+    '<TDF>' +
 
-        '<TRANSFER OBJECTID="BdQueryGroup">' +
-        '<OPTIONS MODE="2" COMMITCOUNT="0"/>' +
-        '<COLUMNS>QueryGroupId,ShortDesc,Description,ParentGroup</COLUMNS>' +
-        '<DATA>' +
-        '<DR>"61FASTPVQA35","Umlagen",null,"53V9MYPUSE4C"</DR>' +
-        '<DR>"69R9LJSA11J3","Kennzahlen",null,"53V9MYPUSE4C"</DR>' +
-        '</DATA>' +
-        '</TRANSFER>' +
+    '<TRANSFER OBJECTID="BdQueryGroup">' +
+    '<OPTIONS MODE="2" COMMITCOUNT="0"/>' +
+    '<COLUMNS>QueryGroupId,ShortDesc,Description,ParentGroup</COLUMNS>' +
+    '<DATA>' +
+    '<DR>"61FASTPVQA35","Umlagen",null,"53V9MYPUSE4C"</DR>' +
+    '<DR>"69R9LJSA11J3","Kennzahlen",null,"53V9MYPUSE4C"</DR>' +
+    '</DATA>' +
+    '</TRANSFER>' +
 
-        '<TRANSFER OBJECTID="BdQuery">' +
-        '<OPTIONS MODE="2" COMMITCOUNT="0"/>' +
-        '<COLUMNS>QueryId,ShortDesc,Description,AppArea,CompanyId,UserId,QueryGroupId,PropPlugInId,PropSearchId,DataViewId,PlugInId,PlugInName,UserDefined,VersionNumber,ControllerId,ViewId,PreDefineByCompany,SkipUserSearchDef</COLUMNS>' +
-        '<DATA>' +
-        '<DR>"59MAH6FSDA9U","Umlage","Umlage","CS",null,null,"61FASTPVQA35","59MAH6CAMVB7","59MAH6E9NW58","59MAHYWXA45L",null,"CtrBdQueryPlugInExcel",false,"1.0",null,null,null,null</DR>' +
-        '<DR>"59MFJI55FB58","Kennzahlen","Kennzahlen","CS",null,null,"69R9LJSA11J3","59MFJIDEDITO","59MFJITNVGGZ","59MFJ2NKE3VU",null,"CtrBdQueryPlugInExcel",false,"1.0",null,null,null,null</DR>' +
-        '</DATA>' +
-        '</TRANSFER>' +
+    '<TRANSFER OBJECTID="BdQuery">' +
+    '<OPTIONS MODE="2" COMMITCOUNT="0"/>' +
+    '<COLUMNS>QueryId,ShortDesc,Description,AppArea,CompanyId,UserId,QueryGroupId,PropPlugInId,PropSearchId,DataViewId,PlugInId,PlugInName,UserDefined,VersionNumber,ControllerId,ViewId,PreDefineByCompany,SkipUserSearchDef</COLUMNS>' +
+    '<DATA>' +
+    '<DR>"59MAH6FSDA9U","Umlage","Umlage","CS",null,null,"61FASTPVQA35","59MAH6CAMVB7","59MAH6E9NW58","59MAHYWXA45L",null,"CtrBdQueryPlugInExcel",false,"1.0",null,null,null,null</DR>' +
+    '<DR>"59MFJI55FB58","Kennzahlen","Kennzahlen","CS",null,null,"69R9LJSA11J3","59MFJIDEDITO","59MFJITNVGGZ","59MFJ2NKE3VU",null,"CtrBdQueryPlugInExcel",false,"1.0",null,null,null,null</DR>' +
+    '</DATA>' +
+    '</TRANSFER>' +
 
-        '<TRANSFER OBJECTID="BdQueryCustom">' +
-        '<OPTIONS MODE="3" COMMITCOUNT="0"/>' +
-        '<COLUMNS>QueryId,ShortDesc,IsActive</COLUMNS>' +
-        '<DATA>' +
-        '<DR>"59MAH6FSDA9U",null,true</DR>' +
-        '<DR>"59MFJI55FB58",null,true</DR>' +
-        '</DATA>' +
-        '</TRANSFER>' +
+    '<TRANSFER OBJECTID="BdQueryCustom">' +
+    '<OPTIONS MODE="3" COMMITCOUNT="0"/>' +
+    '<COLUMNS>QueryId,ShortDesc,IsActive</COLUMNS>' +
+    '<DATA>' +
+    '<DR>"59MAH6FSDA9U",null,true</DR>' +
+    '<DR>"59MFJI55FB58",null,true</DR>' +
+    '</DATA>' +
+    '</TRANSFER>' +
 
-        '</TDF>';
-};
+    '</TDF>';
