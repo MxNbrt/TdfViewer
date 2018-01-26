@@ -3,14 +3,14 @@ angular.module('consts', []);
 function getInitialFileUploaderOptions(fileUploadedFunction) {
     return {
         bindingOptions: {
-            uploadMode: "instantly",
+            uploadMode: 'instantly',
             showFileList: true,
             selectButtonText: '"Datei hochladen"',
-            labelText: ""
+            labelText: ''
         },
         onOptionChanged: fileUploadedFunction
     };
-};
+}
 
 function getInitialSelectBoxOptions(selectionChangedFunction, initializedFunction) {
     return {
@@ -18,19 +18,19 @@ function getInitialSelectBoxOptions(selectionChangedFunction, initializedFunctio
             dataSource: 'businessObjects'
         },
         displayExpr: '_OBJECTID',
-        disabled: true,
+        disabled: false,
         placeholder: 'BusinessObjekt auswählen',
-        onSelectionChanged: selectionChangedFunction,
+        onValueChanged: selectionChangedFunction,
         onInitialized: initializedFunction
     };
-};
+}
 
 function getInitialDownloadButtonOptions(clickFunction) {
     return {
         text: 'Herunterladen',
         onClick: clickFunction
     };
-};
+}
 
 function getInitialDataGridOptions(initializedFunction) {
     return {
@@ -62,7 +62,17 @@ function getInitialDataGridOptions(initializedFunction) {
         },
         onInitialized: initializedFunction
     };
-};
+}
+
+function getX2Js() {
+    return new X2JS({
+        keepCData : true,
+        emptyNodeForm : 'object',
+        skipEmptyTextNodesForObj : false,
+        stripWhitespaces : false,
+        escapeMode : false
+    });
+}
 
 var exampleTdf =
     '<?xml version="1.0" encoding="ISO-8859-1"?>' +
