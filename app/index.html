@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="tdfViewer">
 
 <head>
   <meta charset="utf-8">
@@ -11,52 +11,26 @@
 
   <script src="../node_modules/jquery/dist/jquery.js"></script>
   <script src="../node_modules/angular/angular.js"></script>
+  <script src="../node_modules/angular-route/angular-route.js"></script>
   <script src="../node_modules/devextreme/dist/js/dx.all.debug.js"></script>
   <script src="../node_modules/lodash/lodash.js"></script>
   <script src="../node_modules/x2js/x2js.js"></script>
 
   <link rel="stylesheet" href="app.css">
-  <script src="consts.js"></script>
-  <script src="fileutils.js"></script>
   <script src="app.js"></script>
+  <script src="utils/consts.js"></script>
+  <script src="utils/fileutils.js"></script>
+  <script src="viewFileViewer/viewFileViewer.js"></script>
 </head>
 
-<body ng-controller="myCtrl">
-  <table>
-    <tr>
-      <td width="20%">
-      </td>
-      <td class="twenty">
-        1.
-      </td>
-      <td width="15%">
-        <div dx-file-uploader="fileUploaderOptions"></div>
-      </td>
-      <td class="twenty">
-        2.
-      </td>
-      <td width="20%">
-        <div dx-select-box="selectBoxOptions"></div>
-      </td>
-      <td class="twenty">
-        3.
-      </td>
-      <td width="15%">
-        <div>Editierung in der Grid</div>
-      </td>
-      <td class="twenty">
-        4.
-      </td>
-      <td width="10%">
-        <div dx-button="downloadButtonOptions"></div>
-      </td>
-      <td width="20%">
-      </td>
-    </tr>
-  </table>
-  <div id="result">
-    <div dx-data-grid="dataGridOptions"></div>
+<body>
+  <div ng-controller="CtrlMain">
+    <ul class="menu">
+      <li><a href="#!/viewFileViewer">view1</a></li>
+      <li><a href="#!/view2">view2</a></li>
+    </ul>
   </div>
+  <div ng-view></div>
 </body>
 
 </html>

@@ -1,10 +1,19 @@
-var app = angular.module('myApp', [
+var app = angular.module('tdfViewer', [
     'consts',
     'fileUtils',
-    'dx'
+    'dx',
+    'ngRoute',
+    'fileViewer'
 ]);
 
-app.controller('myCtrl', function ($scope) {
+app.config(['$routeProvider', function($routeProvider) {
+    $routeProvider.when('/viewFileViewer', {
+        templateUrl: '/app/viewFileViewer/viewFileViewer.html',
+        controller: 'CtrlFileViewer'
+    });
+}]);  
+
+app.controller('CtrlMain', function ($scope) {
     var currentFile = '';
     $scope.selectBoxInstance = {};
     $scope.boGridInstance = {};

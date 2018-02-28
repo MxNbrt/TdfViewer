@@ -11,6 +11,8 @@ function readFile(filename, filecontent) {
         case 'tmf':
             // cast to make sure its an array
             return _.castArray(document.TDF.TRANSFER);
+        case 'xml':
+            return '';
         default:
             alert('Das Dateiformat ' + fileExtension + 'wird aktuell nicht unterstützt');
     }
